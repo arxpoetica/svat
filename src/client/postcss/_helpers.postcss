@@ -1,0 +1,162 @@
+
+.buttons {
+	// display: grid;
+	// grid-gap: 10rem;
+	// grid-template-columns: repeat(auto-fill, minmax(150rem, 1fr));
+	display: flex;
+	align-items: center;
+	margin: 0 -6rem;
+	.button {
+		margin: 0 6rem;
+	}
+}
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 0 10rem;
+	padding: 8rem 16rem;
+	background-color: $teal-main;
+	border: 1px solid transparent;
+	border-radius: 1px;
+	color: $white;
+	font: $bold 14rem/1 $font;
+	text-align: center;
+	transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+	cursor: pointer;
+	-webkit-appearance: none;
+	&:hover,
+	&:focus {
+		background-color: $teal-d2;
+	}
+	&.tiny {
+		padding: 4rem 8rem;
+		font-size: 9rem;
+		text-transform: uppercase;
+	}
+	&.small {
+		padding: 6rem 10rem;
+		font-size: 11rem;
+		text-transform: uppercase;
+	}
+	&.large {
+		padding: 10rem 30rem;
+		font-size: 22rem;
+	}
+	&.huge {
+		padding: 20rem 50rem;
+		font-size: 34rem;
+	}
+	&.success {
+		background-color: $green-main;
+		color: $white;
+		&:hover,
+		&:focus {
+			background-color: $green-d2;
+			color: $white;
+		}
+	}
+	&.warning {
+		background-color: $yellow-main;
+		color: $black;
+		&:hover,
+		&:focus {
+			background-color: $yellow-l3;
+			color: $black;
+		}
+	}
+	&.alert {
+		background-color: $alert;
+		color: #fefefe;
+		&:hover,
+		&:focus {
+			background-color: $alert-light;
+			color: #fefefe;
+		}
+	}
+	&.dull {
+		background-color: $gray-6;
+		color: $black;
+		&:hover,
+		&:focus {
+			background-color: $gray-5;
+			color: $black;
+		}
+	}
+	&.link {
+		padding: 0;
+		border: 0;
+		color: $links;
+		background-color: transparent;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&.blank {
+		background-color: transparent;
+		color: $links;
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+	&.off {
+		padding: 0;
+		background-color: transparent;
+		color: $black;
+		cursor: default;
+		pointer-events: none;
+		&:hover,
+		&:focus {
+			background-color: transparent;
+			color: $black;
+		}
+	}
+	&[disabled] {
+		background-color: $gray-5;
+		color: white;
+		cursor: default;
+		pointer-events: none;
+		&:hover,
+		&:focus {
+			background-color: $gray-5;
+			color: white;
+		}
+	}
+}
+
+
+
+
+
+
+/** >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ * `.ghost` helper to visually hide elements on the page
+ * mostly used for accessibility purposes
+*** >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.ghost {
+	// https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+	overflow: hidden;
+	// scss-lint:disable ImportantRule
+	position: absolute !important;
+	// scss-lint:enable ImportantRule
+	width: 1px;
+	height: 1px;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(0 100% 100% 0);
+}
+
+.visibility-hidden {
+	visibility: hidden;
+}
+
+/** >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ * Helper to group JS for ease of development
+ * @helper: .hidden-js
+*** >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.hidden-js {
+	visibility: hidden;
+}
+
